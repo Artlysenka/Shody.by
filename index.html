@@ -25,8 +25,12 @@
 
         }
 
+        .navbar p {
+            font-size: max(1.4rem, 16px)
+        }
+
         .navbar-logo {
-            width: 12rem;
+            width: max(12rem, 200px);
         }
 
         .relative {
@@ -196,18 +200,27 @@
                 .image-block-container {
                     position: relative;
                     overflow: hidden;
-                    height: 300px;
+                    height: 27rem;
+                }
+
+                .image-block-container .inner-ladder {
+                    display: none;
+                }
+
+                .relative {
+                    margin-bottom: 2rem;
                 }
 
                 .relative div ul li {
                     list-style: none;
-                    line-height: 1.9rem;
+                    line-height: 2.2rem;
                     font-family: Tahoma, Arial, sans-serif;
-                    font-size: 1.5rem;
+                    font-size: 1.8rem;
+                    margin-left: -1rem;
                 }
 
                 .relative div ul li i {
-                    font-size: 1.5rem;
+                    font-size: 1.8rem;
                 }
 
                 .relative img {
@@ -220,7 +233,12 @@
                     padding-left: .3rem;
                     padding-right: .3rem;
                     font-family: Tahoma, sans-serif;
-                    font-size: 1.7rem;
+                    font-size: 2rem;
+                }
+                .footer-description ul li {
+                    margin-left: -4rem;
+                    line-height: 3rem;
+                    font-size: 1.5rem;
                 }
             }
         }
@@ -234,7 +252,7 @@
         <nav class="navbar bg-dark">
             <div>
                 <img class='navbar-logo' src="https://i.ibb.co/dGXSh5r/LOGO-new-color.png"
-                    alt="Лестницы на больцах лого">
+                    alt="Лестницы на больцах, производство и установка">
             </div>
             <div>
                 <div class='ml-auto mb-auto'>
@@ -408,7 +426,8 @@
             <div class='col-12 col-sm-6 col-md-4 ladder'>
                 <a href="./lestnitsa-econom.html">
                     <div class='image-block-container'>
-                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/011.jpg" alt="лестница на больцах">
+                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/011.jpg"
+                            alt="лестница на больцах">
                         <div class='inner-ladder'></div>
                         <div class='banner-text'>
                             Лестница эконом
@@ -417,9 +436,10 @@
                 </a>
             </div>
             <div class='col-12 col-sm-6 col-md-4 ladder'>
-                <a href="./lestnitsa-c-kosouramy.html"> 
+                <a href="./lestnitsa-c-kosouramy.html">
                     <div class='image-block-container'>
-                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/941.jpg" alt="лестница на больцах">
+                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/941.jpg"
+                            alt="лестница на больцах">
                         <div class='inner-ladder'></div>
                         <div class='banner-text'>
                             Лестница с фигурными косоурами
@@ -430,7 +450,8 @@
             <div class='col-12 col-sm-6 col-md-4 ladder'>
                 <a href="./lestnitsa-c-balyasinamy.html">
                     <div class='image-block-container'>
-                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/331.jpg" alt="лестница на больцах">
+                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/331.jpg"
+                            alt="лестница на больцах">
                         <div class='inner-ladder'></div>
                         <div class='banner-text'>
                             Лестница закрытая с точеными балясинами
@@ -441,7 +462,8 @@
             <div class='col-12 col-sm-6 col-md-4 ladder'>
                 <a href="./lestnitsa-dvuhtsvetnaya.html">
                     <div class='image-block-container'>
-                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/88.jpg" alt="лестница на больцах">
+                        <img class="ladder-image" src="./lestnitsy-na-boltsakch/mainPage/88.jpg"
+                            alt="лестница на больцах">
                         <div class='inner-ladder'></div>
                         <div class='banner-text'>
                             Лестница двухцветная
@@ -495,10 +517,10 @@
             </div>
         </div>
         <div class='row'>
-            <div class='col-2'></div>
-            <div class='col-8' style='text-align: center'>
+            <div class='col-sm-1 col-lg-2'></div>
+            <div class='col-sm-10 col-lg-8' style='text-align: center'>
                 <hr>
-                <p style='font-size: .7rem; font-family: Tahoma;' class='text-muted'>
+                <p style='font-size: max(.7rem, 15px); font-family: Tahoma;' class='text-muted'>
                     В первые годы эксплуатации нового дома происходит усыхание деревянных балок и досок пола. Это
                     неизбежно.
                     В результате начинают шататься столбы ограждения второго этажа. Нам удалось решить эту проблему на
@@ -512,7 +534,7 @@
                 </p>
                 <hr>
             </div>
-            <div class='col-2'></div>
+            <div class='col-sm-1 col-lg-2'></div>
         </div>
         <div class='row'>
             <div class='col-12 inner-headers-container bg-dark border-bottom border-warning' style='margin-top: 5px;'>
@@ -549,27 +571,33 @@
         $(document).ready(function () {
 
             $('.ladder').on('mouseover', (function (event) {
-                $(this).find('.inner-ladder').stop().animate({
-                    opacity: 0.0
-                }, 10)
-                $(this).find('.banner-text').stop().slideDown(300)
-                $(this).find('.banner-text').css({
+                if (window.innerWidth < 576) return
+                else {
+                    $(this).find('.inner-ladder').stop().animate({
+                        opacity: 0.0
+                    }, 10)
+                    $(this).find('.banner-text').stop().slideDown(300)
+                    $(this).find('.banner-text').css({
 
 
-                })
-                $(this).find('.ladder-image').css({
-                    'transform': 'scale(1.1)',
-                })
+                    })
+                    $(this).find('.ladder-image').css({
+                        'transform': 'scale(1.1)',
+                    })
+                }
             }))
 
             $('.ladder').on('mouseout', (function () {
-                $(this).find('.inner-ladder').stop().animate({
-                    opacity: 1.0
-                }, 10)
-                $(this).find('.banner-text').stop().slideUp(300);
-                $(this).find('.ladder-image').css({
-                    'transform': 'scale(1.0)',
-                })
+                if (window.innerWidth < 576) return
+                else {
+                    $(this).find('.inner-ladder').stop().animate({
+                        opacity: 1.0
+                    }, 10)
+                    $(this).find('.banner-text').stop().slideUp(300);
+                    $(this).find('.ladder-image').css({
+                        'transform': 'scale(1.0)',
+                    })
+                }
             }))
 
         })
