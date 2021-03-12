@@ -425,7 +425,7 @@
             let fingerRelativePosition = 0
 
             document.addEventListener('touchstart', function (event) {
-                picture.classList.remove('transition-mobile')
+                picture.classList.add('transition-mobile')
                 event.preventDefault();
                 event.stopPropagation();
                 startPoint.x = event.changedTouches[0].pageX;
@@ -451,7 +451,7 @@
             }, false);
 
             document.addEventListener('touchend', function (event) {
-                picture.classList.add('transition-mobile')
+                
                 if (currentFingerPosition.x - startPoint.x > 0) {
                     picture.style.marginLeft = position + width + 'rem'
                     position += width
