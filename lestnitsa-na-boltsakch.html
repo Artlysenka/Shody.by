@@ -425,9 +425,9 @@
             let fingerRelativePosition = 0
 
             picture.addEventListener('touchstart', function (event) {
-                picture.classList.remove('transition-mobile')
                 event.preventDefault();
                 event.stopPropagation();
+                picture.classList.remove('transition-mobile')
                 startPoint.x = event.changedTouches[0].pageX;
             }, false);
 
