@@ -116,6 +116,10 @@
             transition: margin 400ms;
         }
 
+        .mobile-transition {
+            transition: margin 200ms;
+        }
+
 
         .gallery li {
             display: inline-block;
@@ -319,7 +323,7 @@
     </header>
     <div class='container-fluid'>
         <div class='row'>
-            <div class='col-12 ladder-name bg-light border-top border-muted'>
+            <div class='col-12 ladder-name bg-light'>
                 <div>
                     <h1 class='h5 text-dark'>
                         Лестница на больцах
@@ -415,7 +419,7 @@
             else {
                 width = 32.2
             }
-            let count = 1;
+            
             let totalSlidesCount = 0
             let list = carousel.querySelector('ul');
             let listElems = carousel.querySelectorAll('li');
@@ -426,10 +430,13 @@
             let currentFingerPosition = {}
             let fingerRelativePosition = 0
 
+
+
             document.addEventListener('touchstart', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
                 startPoint.x = event.changedTouches[0].pageX;
+                picture.classList.add('mobile-transition')
             }, false);
 
             document.addEventListener('touchmove', function (event) {
@@ -452,6 +459,8 @@
             }, false);
 
             document.addEventListener('touchend', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
                 if (currentFingerPosition.x - startPoint.x > 0) {
                     picture.style.marginLeft = position + width + 'rem'
                     position += width
@@ -608,7 +617,7 @@
                     position = 0
                     $('.left').css('opacity', 0.1)
                 }
-                
+
                 list.style.marginLeft = position + 'rem';
             }
 
