@@ -309,7 +309,7 @@
                 <div class='ml-auto mb-auto'>
                     <p class='h5 text-light'>
                         <strong>
-                            +375295959878 (MTC/Viber/WhatsApp.)
+                            +375295959878 (MTC/Viber)
                         </strong>
                     </p>
                 </div>
@@ -431,6 +431,8 @@
                 event.preventDefault();
                 event.stopPropagation();
                 picture.classList.remove('transition')
+                let clickTime = new Date
+                initialTime = clickTime.getTime()
                 startPoint.x = event.changedTouches[0].pageX;
             }, false);
 
@@ -452,15 +454,23 @@
                 }
 
             }, false);
-            console.log('ok')
+            
             picture.addEventListener('touchend', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
                 picture.classList.add('transition')
+                let mouseUpTime = new Date
+                finaleTime = mouseUpTime.getTime()
 
                 if (currentFingerPosition.x - startPoint.x > 0) {
-                    if (currentFingerPosition.x - startPoint.x < 50) {
-                        picture.style.marginLeft = position + 'rem'
+                    if (currentFingerPosition.x - startPoint.x < 200) {
+                        if (finaleTime - initialTime > 200) {
+                                picture.style.marginLeft = position + 'rem'
+                            }
+                            else {
+                                picture.style.marginLeft = position + width + 'rem'
+                                position += width
+                            }
                     }
                     else {
                         picture.style.marginLeft = position + width + 'rem'
@@ -468,8 +478,14 @@
                     }
                 }
                 else {
-                    if (currentFingerPosition.x - startPoint.x > -50) {
-                        picture.style.marginLeft = position + 'rem'
+                    if (currentFingerPosition.x - startPoint.x > -200) {
+                        if (finaleTime - initialTime > 200) {
+                                picture.style.marginLeft = position + 'rem'
+                            }
+                            else {
+                                picture.style.marginLeft = position + width + 'rem'
+                                position += width
+                            }
                     }
                     else {
                         picture.style.marginLeft = position - width + 'rem'
