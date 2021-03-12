@@ -427,7 +427,7 @@
             picture.addEventListener('touchstart', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
-                
+                picture.classList.remove('transition-mobile')
                 startPoint.x = event.changedTouches[0].pageX;
             }, false);
 
