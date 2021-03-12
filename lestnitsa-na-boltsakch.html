@@ -30,7 +30,9 @@
         .transition-mobile {
             transition: margin 300ms;
         }
-
+        .transition {
+            transition: margin 400ms;
+        }
         .navbar-logo {
             width: max(12rem, 180px);
         }
@@ -428,7 +430,6 @@
                 event.preventDefault();
                 event.stopPropagation();
                 picture.classList.remove('transition-mobile')
-                console.log('go')
                 startPoint.x = event.changedTouches[0].pageX;
             }, false);
 
