@@ -27,10 +27,11 @@
         html {
             font-size: 2vw;
         }
-        
+
         .transition {
             transition: margin 300ms;
         }
+
         .navbar-logo {
             width: max(12rem, 180px);
         }
@@ -421,7 +422,7 @@
             let initialTime = 0
             let finaleTime = 0
 
-            
+
             let startPoint = {}
             let currentFingerPosition = {}
             let fingerRelativePosition = 0
@@ -456,20 +457,24 @@
                 event.preventDefault();
                 event.stopPropagation();
                 picture.classList.add('transition')
-                
+
                 if (currentFingerPosition.x - startPoint.x > 0) {
                     if (currentFingerPosition.x - startPoint.x < 50) {
-                        picture.style.marginLeft = position + 'rem' 
+                        picture.style.marginLeft = position + 'rem'
                     }
-                    picture.style.marginLeft = position + width + 'rem'
-                    position += width
+                    else {
+                        picture.style.marginLeft = position + width + 'rem'
+                        position += width
+                    }
                 }
                 else {
                     if (currentFingerPosition.x - startPoint.x > -50) {
-                        picture.style.marginLeft = position + 'rem' 
+                        picture.style.marginLeft = position + 'rem'
                     }
-                    picture.style.marginLeft = position - width + 'rem'
-                    position -= width
+                    else {
+                        picture.style.marginLeft = position - width + 'rem'
+                        position -= width
+                    }
                 }
 
             }, false);
@@ -478,7 +483,7 @@
             let initialPosition = {}
             let currentPosition = {}
             let mouseRelativePosition = 0
-            
+
 
             picture.addEventListener('mousedown', function (event) {
                 event.preventDefault();
@@ -618,7 +623,7 @@
                     position = 0
                     $('.left').css('opacity', 0.1)
                 }
-                
+
                 list.style.marginLeft = position + 'rem';
             }
 
