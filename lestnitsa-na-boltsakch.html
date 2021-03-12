@@ -455,8 +455,8 @@
             picture.addEventListener('touchend', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
-                
                 picture.classList.add('transition')
+                alert('fingerRelativePosition: ', fingerRelativePosition)
                 if (currentFingerPosition.x - startPoint.x > 0) {
                     if (fingerRelativePosition < 50) {
                         picture.style.marginLeft = position + 'rem' 
