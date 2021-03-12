@@ -456,16 +456,16 @@
                 event.preventDefault();
                 event.stopPropagation();
                 picture.classList.add('transition')
-                alert('fingerRelativePosition: ', fingerRelativePosition)
+                
                 if (currentFingerPosition.x - startPoint.x > 0) {
-                    if (fingerRelativePosition < 50) {
+                    if (currentFingerPosition.x - startPoint.x < 50) {
                         picture.style.marginLeft = position + 'rem' 
                     }
                     picture.style.marginLeft = position + width + 'rem'
                     position += width
                 }
                 else {
-                    if (fingerRelativePosition < 50) {
+                    if (currentFingerPosition.x - startPoint.x > -50) {
                         picture.style.marginLeft = position + 'rem' 
                     }
                     picture.style.marginLeft = position - width + 'rem'
