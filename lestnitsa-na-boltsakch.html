@@ -418,8 +418,10 @@
             let list = carousel.querySelector('ul');
             let listElems = carousel.querySelectorAll('li');
             let position = 0;
+            let initialTime = 0
+            let finaleTime = 0
 
-            console.log('ok')
+            
             let startPoint = {}
             let currentFingerPosition = {}
             let fingerRelativePosition = 0
@@ -456,10 +458,16 @@
                 
                 picture.classList.add('transition')
                 if (currentFingerPosition.x - startPoint.x > 0) {
+                    if (fingerRelativePosition < 50) {
+                        picture.style.marginLeft = position + 'rem' 
+                    }
                     picture.style.marginLeft = position + width + 'rem'
                     position += width
                 }
                 else {
+                    if (fingerRelativePosition < 50) {
+                        picture.style.marginLeft = position + 'rem' 
+                    }
                     picture.style.marginLeft = position - width + 'rem'
                     position -= width
                 }
@@ -470,8 +478,7 @@
             let initialPosition = {}
             let currentPosition = {}
             let mouseRelativePosition = 0
-            let initialTime = 0
-            let finaleTime = 0
+            
 
             picture.addEventListener('mousedown', function (event) {
                 event.preventDefault();
