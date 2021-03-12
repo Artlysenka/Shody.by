@@ -27,11 +27,9 @@
         html {
             font-size: 2vw;
         }
-        .transition-mobile {
-            transition: margin 300ms;
-        }
+        
         .transition {
-            transition: margin 400ms;
+            transition: margin 300ms;
         }
         .navbar-logo {
             width: max(12rem, 180px);
@@ -429,7 +427,7 @@
             picture.addEventListener('touchstart', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
-                picture.classList.remove('transition-mobile')
+                picture.classList.remove('transition')
                 startPoint.x = event.changedTouches[0].pageX;
             }, false);
 
@@ -456,7 +454,7 @@
                 event.preventDefault();
                 event.stopPropagation();
                 
-                picture.classList.add('transition-mobile')
+                picture.classList.add('transition')
                 if (currentFingerPosition.x - startPoint.x > 0) {
                     picture.style.marginLeft = position + width + 'rem'
                     position += width
