@@ -427,8 +427,10 @@
             let fingerRelativePosition = 0
 
             document.addEventListener('touchstart', function (event) {
+                
                 event.preventDefault();
                 event.stopPropagation();
+                alert('ok')
                 startPoint.x = event.changedTouches[0].pageX;
             }, false);
 
