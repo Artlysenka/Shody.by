@@ -453,6 +453,7 @@
             picture.addEventListener('touchend', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
+                alert('touchend: ', event.target)
                 picture.classList.add('transition-mobile')
                 if (currentFingerPosition.x - startPoint.x > 0) {
                     picture.style.marginLeft = position + width + 'rem'
