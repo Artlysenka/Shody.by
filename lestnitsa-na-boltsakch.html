@@ -309,7 +309,7 @@
                 <div class='ml-auto mb-auto'>
                     <p class='h5 text-light'>
                         <strong>
-                            +375295959878 (MTC/Viber/WatsAPP)
+                            +375295959878 (MTC/Viber/)
                         </strong>
                     </p>
                 </div>
@@ -454,7 +454,7 @@
                 }
 
             }, false);
-            
+
             picture.addEventListener('touchend', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
@@ -463,29 +463,35 @@
                 finaleTime = mouseUpTime.getTime()
 
                 if (currentFingerPosition.x - startPoint.x > 0) {
-                    if (fingerRelativePosition < 200) {
-                        if (finaleTime - initialTime > 200) {
+                    if (position !== 0) {
+                        if (fingerRelativePosition < 200) {
+                            if (finaleTime - initialTime > 200) {
                                 picture.style.marginLeft = position + 'rem'
                             }
                             else {
                                 picture.style.marginLeft = position + width + 'rem'
                                 position += width
                             }
+                        }
+                        else {
+                            picture.style.marginLeft = position + width + 'rem'
+                            position += width
+                        }
                     }
                     else {
-                        picture.style.marginLeft = position + width + 'rem'
-                        position += width
+                        picture.style.marginLeft = position + 'rem'
                     }
+
                 }
                 else {
                     if (fingerRelativePosition < 200) {
                         if (finaleTime - initialTime > 200) {
-                                picture.style.marginLeft = position + 'rem'
-                            }
-                            else {
-                                picture.style.marginLeft = position - width + 'rem'
-                                position -= width
-                            }
+                            picture.style.marginLeft = position + 'rem'
+                        }
+                        else {
+                            picture.style.marginLeft = position - width + 'rem'
+                            position -= width
+                        }
                     }
                     else {
                         picture.style.marginLeft = position - width + 'rem'
@@ -569,7 +575,7 @@
                     }
                     else {
                         picture.style.marginLeft = position + 'rem'
-                        console.log(position)
+                        
                     }
                 }
                 else {
@@ -628,7 +634,7 @@
                         overflow: 'scroll',
                     })
                     totalSlidesCount = 0
-                   
+
                 },
             })
 
@@ -649,7 +655,7 @@
             const slideRight = () => {
                 picture.classList.remove('transition')
                 position -= width;
-               
+
                 if (position <= -width * (listElems.length - 1)) {
                     position = -width * (listElems.length - 1)
                     $('.right').css('opacity', 0.1)
@@ -673,7 +679,7 @@
                 if (event.code === 'ArrowRight') slideRight()
             })
 
-            
+
             $('.prev').on({
                 'click': slideLeft,
                 'mouseover': hightLightButtonLeft,
@@ -688,7 +694,7 @@
                     $('.right').css('opacity', 0.1)
                 }
             })
-            
+
         })
 
     </script>
