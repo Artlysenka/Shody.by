@@ -638,6 +638,7 @@
             const slideRight = () => {
                 picture.classList.remove('transition')
                 position -= width;
+                
                 if (position <= -width * (listElems.length - 1)) {
                     position = -width * (listElems.length - 1)
                     $('.right').css('opacity', 0.1)

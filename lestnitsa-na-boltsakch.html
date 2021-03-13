@@ -251,7 +251,7 @@
 
     <div id='modal-container' class='container-fluid modal-container'>
         <div class='row'>
-            <div class='col-lg-2 arrow-container prev'>
+            <div id='prev' class='col-lg-2 arrow-container prev'>
                 <div class="arrow left">
                     <i class="fas fa-chevron-left"></i>
                 </div>
@@ -280,7 +280,7 @@
                 </div>
 
             </div>
-            <div class='col-lg-2 arrow-container next'>
+            <div id='next' class='col-lg-2 arrow-container next'>
                 <div class="arrow right">
                     <i class="fas fa-chevron-right"></i>
                 </div>
@@ -463,7 +463,7 @@
                 finaleTime = mouseUpTime.getTime()
 
                 if (currentFingerPosition.x - startPoint.x > 0) {
-                    if (currentFingerPosition.x - startPoint.x < 200) {
+                    if (fingerRelativePosition < 200) {
                         if (finaleTime - initialTime > 200) {
                                 picture.style.marginLeft = position + 'rem'
                             }
@@ -478,7 +478,7 @@
                     }
                 }
                 else {
-                    if (currentFingerPosition.x - startPoint.x > -200) {
+                    if (fingerRelativePosition < 200) {
                         if (finaleTime - initialTime > 200) {
                                 picture.style.marginLeft = position + 'rem'
                             }
@@ -494,6 +494,7 @@
                 }
 
             }, false);
+
 
             let mouseClickedOnTheElenent = false
             let initialPosition = {}
@@ -568,6 +569,7 @@
                     }
                     else {
                         picture.style.marginLeft = position + 'rem'
+                        console.log(position)
                     }
                 }
                 else {
@@ -626,6 +628,7 @@
                         overflow: 'scroll',
                     })
                     totalSlidesCount = 0
+                   
                 },
             })
 
@@ -646,6 +649,7 @@
             const slideRight = () => {
                 picture.classList.remove('transition')
                 position -= width;
+               
                 if (position <= -width * (listElems.length - 1)) {
                     position = -width * (listElems.length - 1)
                     $('.right').css('opacity', 0.1)
@@ -665,11 +669,11 @@
             }
 
             document.addEventListener('keydown', function (event) {
-                picture.classList.remove('transition')
                 if (event.code === 'ArrowLeft') slideLeft()
                 if (event.code === 'ArrowRight') slideRight()
             })
 
+            
             $('.prev').on({
                 'click': slideLeft,
                 'mouseover': hightLightButtonLeft,
@@ -684,6 +688,7 @@
                     $('.right').css('opacity', 0.1)
                 }
             })
+            
         })
 
     </script>
