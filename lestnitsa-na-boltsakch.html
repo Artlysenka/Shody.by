@@ -223,6 +223,11 @@
                 overflow: hidden;
             }
 
+            .gallery li {
+            display: inline-block;
+            margin-right: 1rem;
+            }
+
             .gallery img {
                 width: 50rem;
                 display: inline-block;
@@ -409,12 +414,12 @@
             let modalContainer = document.getElementById('modal-container')
             let width = 0
             if (window.innerWidth < 992) {
-                width = 50.2
+                width = 51
             }
             else {
                 width = 32.2
             }
-            let count = 1;
+            
             let totalSlidesCount = 0
             let list = carousel.querySelector('ul');
             let listElems = carousel.querySelectorAll('li');
@@ -481,7 +486,6 @@
                     else {
                         picture.style.marginLeft = position + 'rem'
                     }
-
                 }
                 else {
                     if (fingerRelativePosition < 200) {
@@ -498,7 +502,6 @@
                         position -= width
                     }
                 }
-
             }, false);
 
 
@@ -540,7 +543,7 @@
                     }
                     else {
                         picture.style.marginLeft = movingMarginBackward + 'px'
-                        if (position === 0) {
+                        if (position >= 0) {
                             picture.style.marginLeft = (currentMargin + (mouseRelativePosition / 3)) + 'px'
                         }
 
@@ -558,7 +561,9 @@
                 finaleTime = mouseUpTime.getTime()
 
                 if (currentPosition.x - initialPosition.x > 0) {
-                    if (position !== 0) {
+                    console.log('position: ', position)
+                    console.log('width: ', width)
+                    if (position < 0) {
                         if (mouseRelativePosition < 200) {
                             if (finaleTime - initialTime > 200) {
                                 picture.style.marginLeft = position + 'rem'
@@ -574,8 +579,7 @@
                         }
                     }
                     else {
-                        picture.style.marginLeft = position + 'rem'
-                        
+                        picture.style.marginLeft = 0 + 'rem'
                     }
                 }
                 else {
