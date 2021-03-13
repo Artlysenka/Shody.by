@@ -314,7 +314,7 @@
                 <div class='ml-auto mb-auto'>
                     <p class='h5 text-light'>
                         <strong>
-                            +375295959878 (MTC/Viber/WhatsAPPP)
+                            +375295959878 (MTC/Viber/Without Prevent)
                         </strong>
                     </p>
                 </div>
@@ -433,8 +433,7 @@
             let fingerRelativePosition = 0
 
             picture.addEventListener('touchstart', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
+                
                 picture.classList.remove('transition')
                 let clickTime = new Date
                 initialTime = clickTime.getTime()
@@ -442,8 +441,7 @@
             }, false);
 
             picture.addEventListener('touchmove', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
+                
 
                 nowPoint = event.changedTouches[0];
                 currentFingerPosition.x = nowPoint.pageX
@@ -461,8 +459,7 @@
             }, false);
 
             picture.addEventListener('touchend', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
+                
                 picture.classList.add('transition')
                 let mouseUpTime = new Date
                 finaleTime = mouseUpTime.getTime()
