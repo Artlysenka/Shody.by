@@ -433,7 +433,7 @@
             let fingerRelativePosition = 0
 
             picture.addEventListener('touchstart', function (event) {
-                
+                event.stopPropagation()
                 picture.classList.remove('transition')
                 let clickTime = new Date
                 initialTime = clickTime.getTime()
@@ -442,7 +442,7 @@
 
             picture.addEventListener('touchmove', function (event) {
                 
-
+                event.stopPropagation()
                 nowPoint = event.changedTouches[0];
                 currentFingerPosition.x = nowPoint.pageX
                 fingerRelativePosition = Math.abs(currentFingerPosition.x - startPoint.x)
@@ -459,7 +459,7 @@
             }, false);
 
             picture.addEventListener('touchend', function (event) {
-                
+                event.stopPropagation()
                 picture.classList.add('transition')
                 let mouseUpTime = new Date
                 finaleTime = mouseUpTime.getTime()
