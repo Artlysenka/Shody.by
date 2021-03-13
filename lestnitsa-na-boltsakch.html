@@ -224,8 +224,8 @@
             }
 
             .gallery li {
-            display: inline-block;
-            margin-right: 1rem;
+                display: inline-block;
+                margin-right: 1rem;
             }
 
             .gallery img {
@@ -314,7 +314,7 @@
                 <div class='ml-auto mb-auto'>
                     <p class='h5 text-light'>
                         <strong>
-                            +375295959878 (MTC/Viber/Without Prevent)
+                            +375295959878 (MTC/Viber/Added Changes)
                         </strong>
                     </p>
                 </div>
@@ -419,7 +419,7 @@
             else {
                 width = 32.2
             }
-            
+
             let totalSlidesCount = 0
             let list = carousel.querySelector('ul');
             let listElems = carousel.querySelectorAll('li');
@@ -441,19 +441,22 @@
             }, false);
 
             picture.addEventListener('touchmove', function (event) {
-                
+
                 event.stopPropagation()
                 nowPoint = event.changedTouches[0];
                 currentFingerPosition.x = nowPoint.pageX
                 fingerRelativePosition = Math.abs(currentFingerPosition.x - startPoint.x)
-                let currentMargin = (window.innerWidth / 100) * 2 * position
-                let movingMarginForward = (currentMargin + -fingerRelativePosition)
-                let movingMarginBackward = (currentMargin + fingerRelativePosition)
-                if (currentFingerPosition.x - startPoint.x < 0) {
-                    picture.style.marginLeft = movingMarginForward + 'px'
-                }
-                else {
-                    picture.style.marginLeft = movingMarginBackward + 'px'
+
+                if (event.changedTouches.length === 1) {
+                    let currentMargin = (window.innerWidth / 100) * 2 * position
+                    let movingMarginForward = (currentMargin + -fingerRelativePosition)
+                    let movingMarginBackward = (currentMargin + fingerRelativePosition)
+                    if (currentFingerPosition.x - startPoint.x < 0) {
+                        picture.style.marginLeft = movingMarginForward + 'px'
+                    }
+                    else {
+                        picture.style.marginLeft = movingMarginBackward + 'px'
+                    }
                 }
 
             }, false);
@@ -466,7 +469,7 @@
 
                 if (currentFingerPosition.x - startPoint.x > 0) {
                     if (position !== 0) {
-                        if (fingerRelativePosition < 200) {
+                        if (fingerRelativePosition < 150) {
                             if (finaleTime - initialTime > 200) {
                                 picture.style.marginLeft = position + 'rem'
                             }
@@ -485,7 +488,7 @@
                     }
                 }
                 else {
-                    if (fingerRelativePosition < 200) {
+                    if (fingerRelativePosition < 150) {
                         if (finaleTime - initialTime > 200) {
                             picture.style.marginLeft = position + 'rem'
                         }
