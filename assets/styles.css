@@ -1,0 +1,302 @@
+    @font-face {
+    font-family: Roboto_Condenced;
+    src: url('../fonts/Scada/Scada-Regular.ttf')
+    }
+    
+    html {
+        font-size: 2vw;
+    }
+    body {
+        background: url('../lestnitsy-na-boltsakch/pexels-gerritt-tisdale-922793\ \(2\).jpg');
+        
+        position: relative;
+        overflow-x: hidden;
+    }
+    #background-overlay {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    .transition {
+        transition: margin 300ms;
+    } 
+
+    nav {
+        height: 10rem;
+    }
+
+    .navbar-logo {
+        width: max(14rem, 220px);
+    }
+
+    .navbar p {
+        font-family: Tahoma, Arial, sans-serif;
+        font-size: max(.7rem, 12px);
+    }
+
+    .modal-container {
+        display: none;
+        background-color: rgba(0, 0, 0, 1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 9999;
+    }
+
+    .hide-modal {
+        display: none;
+    }
+
+    #hide-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        display: flex;
+        justify-content: center;
+        width: max(1.3rem, 22px);
+        height: max(1.7rem, 27px);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.0);
+        z-index: 9999;
+        cursor: pointer;
+        transition: all 200ms;
+    }
+    #hide-button div i {
+        font-size: max(1rem, 20px);
+        color:rgba(0, 0, 0, 1)
+    }
+    #hide-button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        padding: 0px;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+    }
+
+    .gallery {
+        width: 32rem;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .gallery img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .gallery ul {
+        height: auto;
+        width: 9999px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+        /* http://davidwalsh.name/remove-whitespace-inline-block */
+        font-size: 0;
+    }
+
+    .gallery li {
+        display: inline-block;
+        margin-right: .2rem;
+        width: 32rem;
+        text-align: center;
+    }
+
+    .arrow {
+        position: relative;
+        padding: 0;
+        width: max(1.6rem, 20px);
+        height: max(3rem, 35px);
+        border-radius: 5px;
+        color: rgb(126, 125, 125);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity, 150ms;
+    }
+
+    .arrow i {
+        font-size: max(1.3rem, 20px);
+    }
+
+    .arrow:hover {
+        opacity: 1;
+    }
+
+    .arrow-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .next {
+        cursor: pointer;
+    }
+
+    .prev {
+        cursor: pointer;
+    }
+
+    .ladder-name {
+        text-align: center;
+        padding-top: .7rem;
+        padding-bottom: .4rem;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:rgba(0, 0, 0, .4);
+    }
+
+    .ladder-name .right {
+        position: absolute; 
+        right: 1rem;
+        cursor: pointer;
+        color:rgba(0, 0, 0, .7)
+    }
+    .ladder-name .left {
+        position: absolute; 
+        left: 1rem;
+        cursor: pointer;
+        color:rgba(0, 0, 0, .7)
+    }
+    .ladder-name i:hover {
+        color:rgb(247, 189, 1)
+    }
+
+    .ladder-name h1 {
+        font-family: Roboto_Condenced;
+        font-size: max(1.1rem, 16px)
+    }
+
+    .ladder-description {
+        
+        margin-bottom: 4rem;
+    }
+
+    .ladder-description p {
+        font-size: max(.6rem, 15px)
+    }
+
+    p {
+        font-size: .6rem;
+        padding: 0px 20px 0px 20px;
+    }
+    
+
+    .ladder-images-container {
+        background-color: rgba(255, 255, 255, .7)
+    }
+
+    .catching-frase {
+        background-color: rgba(0, 0, 0, .7)
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, .7)
+    }
+
+    .footer-description {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-description ul li {
+        font-size: max(.5rem, 9px);
+        list-style: none;
+        line-height: 1.2rem;
+    }
+
+    .ladder-image {
+        max-width: 100%;
+        height: auto;
+        transition: 500ms;
+    }
+    .modal-button {
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 992px) {
+
+        .arrow-container {
+            display: none;
+        }
+
+        .carousel-container {
+            padding: 0px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+        }
+
+        .gallery {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery li {
+            display: inline-block;
+            margin-right: 1rem;
+            width: 50rem;
+            text-align: center;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    }
+
+    @media (max-width: 576px) {
+        #background-overlay {
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        nav {
+            height: 25rem;
+        }
+
+        .ladder-name {
+            height: 15rem;
+            background-color: rgba(0, 0, 0, .2);
+        }
+
+        .footer-description ul li {
+            list-style: none;
+            margin-left: -4rem;
+            line-height: 2.5rem;
+        }
+        .modal-button {
+            padding-left: 3rem;
+            padding-right: 3rem;
+            height: 30rem;
+            overflow: hidden;
+            margin-top: 2rem;
+        } 
+
+        .footer-description {
+            margin-top: 8rem;
+            margin-bottom: 2rem;
+        }
+
+    }
+
+

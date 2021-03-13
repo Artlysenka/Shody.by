@@ -18,19 +18,45 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+
+
     <title>Shody Starting Page</title>
     <style>
+        @font-face {
+            font-family: Scada;
+            src: url('./fonts/Scada/Scada-Regular.ttf')
+        }
+
         html {
             font-size: 2vw;
-
         }
 
-        .navbar p {
-            font-size: max(1.4rem, 14px)
+        #logo {
+            position: absolute;
+            top: .7rem;
+            left: 1rem;
         }
 
-        .navbar-logo {
-            width: max(12rem, 200px);
+        #logo img {
+            width: max(12rem, 250px);
+        }
+
+        /* #contact-phone-block {
+            position: absolute;
+            top: .7rem;
+            right: 1rem;
+        }
+
+        #contact-phone-block h1 {
+            font-size: 1.2rem;
+            font-family: Tahoma, Arial, sans-serif;
+        } */
+
+
+        .main-headers {
+           
+            font-family: Scada, Tahoma, sans-serif;
+            font-size: 1.3rem;
         }
 
         .relative {
@@ -38,60 +64,87 @@
             display: inline-block;
         }
 
-        .relative div {
+        .relative .backgrodund-image-overlay {
             position: absolute;
-            top: 1rem;
-            left: 2rem;
+            top: 0px;
+            width: 100vw;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-left: -1rem;
+        }
+
+        .relative #our-work {
+            position: absolute;
+            bottom: 5px;
+            left: 0px;
+            right: 0px;
+            height: 3rem;
+            padding-top: .2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .relative #wide {
+            width: 100vw;
+            margin-left: -1rem;
+        }
+        .relative #long {
+            display: none;
+        }
+
+        .relative #our-advantages {
+            position: absolute;
+            top: max(5rem, 150px);
+            right: 2rem;
             display: inline-block;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, .5);
         }
 
-        .relative div ul {
+        .relative #our-advantages ul {
             position: relative;
-            margin-left: -30px;
+            margin-left: -1rem;
         }
 
-        .main-headers {
-            width: fit-content;
-            padding-bottom: .2rem;
-            padding-left: .3rem;
-            padding-right: .3rem;
-            font-family: Tahoma, sans-serif;
-            font-size: 1.3rem;
-        }
-
-        .relative div ul li {
+        .relative #our-advantages ul li {
             list-style: none;
-            line-height: 1.7rem;
-            font-family: Tahoma, Arial, sans-serif;
+            line-height: max(1.7rem, 28px);
+            font-family: Scada, Tahoma, Arial, sans-serif;
             font-size: max(1.1rem, 20px);
+        }
+
+        .relative #our-advantages ul li i {
+            font-size: 1.3rem;
         }
 
         .ladder {
             position: relative;
-            padding: 3px 5px 0px 3px;
+            padding: 5px 5px 0px 5px;
             margin-top: 2px;
             cursor: pointer;
             z-index: 2;
         }
 
-        .inner-ladder {
+        .ladder a .image-block-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ladder a .image-block-container .inner-ladder {
             position: absolute;
             top: 0px;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, .3);
+            background-color: rgba(0, 0, 0, .6);
             opacity: 1.0;
             transition: opacity 200ms ease-in-out;
             z-index: 1;
         }
 
-        .image-block-container {
-            position: relative;
-            overflow: hidden;
-            height: 11.5rem;
-        }
-
-        .ladder-image {
+        .ladder a .image-block-container .ladder-image {
             max-width: 100%;
             height: auto;
             transition: 500ms;
@@ -106,23 +159,22 @@
         .banner-text {
             position: absolute;
             height: auto;
-            bottom: 10px;
-            width: 95%;
+            bottom: 0px;
+            width: 100%;
             left: 0;
             right: 0;
             margin: auto;
-            padding: 5px 50px 9px 50px;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
+            padding: 15px 50px 10px 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: black;
             font-size: max(1rem, 15px);
-            font-family: Tahoma, Arial, sans-serif;
+            font-family: Scada, Tahoma, Arial, sans-serif;
             text-align: center;
             display: none;
         }
 
         .inner-headers-container {
-            height: max(3rem, 45px);
+            height: max(3.5rem, 85px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -131,24 +183,24 @@
         }
 
         .inner-headers {
-            font-size: max(1.1rem, 18px);
-            font-family: Tahoma Arial, sans-serif;
+            font-size: max(1.6rem, 18px);
+            font-family: Scada, Tahoma Arial, sans-serif;
             padding-top: .4rem;
         }
 
         .description p {
             font-size: max(.7rem, 14px);
-            font-family: Arial, Tahoma, sans-serif;
+            font-family: Scada, Tahoma, sans-serif;
         }
 
         .footer-description {
             margin-top: 1rem;
-
         }
 
         .footer-description ul li {
-            font-size: .6rem;
-            font-family: Arial, Tahoma, sans-serif;
+            font-size: max(.6rem, 11px);
+            font-family: Tahoma, Scada, Arial, sans-serif;
+            line-height: max(1.3rem, 20px);
             list-style: none;
         }
 
@@ -156,204 +208,232 @@
             font-size: 1.5rem;
         }
 
+        @media(max-width: 992px) {
+            .ladder a .image-block-container .inner-ladder {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
-
-            .main-headers {
-                font-size: 2rem;
-            }
-
-            .relative {
-                margin-bottom: 2rem;
-            }
 
             .relative div {
                 position: absolute;
-                top: 1rem;
                 left: 1rem;
-                display: inline-block;
             }
 
-            .relative div span {
-                border-radius: 2px;
-                color: black;
-                line-height: 15px;
-                padding-left: 5px;
-                padding-right: 5px;
-            }
-
-            .relative div h2 {
-                font: .8rem arial;
-            }
-
-            .relative div ul li {
-                line-height: 2.2rem;
-                list-style: none;
-            }
+            .ladder a .image-block-container .inner-ladder {
+                    display: none;
+                }
 
             .relative div ul li i {
-                font-size: 2rem;
-            }
-
-            .relative img {
-                opacity: 0.0;
+                font-size: .1rem;
             }
 
             .image-block-container {
                 position: relative;
                 overflow: hidden;
-                height: 200px;
+                height: 18rem;
             }
 
-            @media (max-width: 576px) {
-
-                .navbar-logo {
-                    width: 22rem;
-                    margin-left: -.5rem;
-                }
-                .navbar #phone-div {
-                    align-self: flex-start;
-                    margin-top: .6rem;
-                }
-
-                .navbar p {
-                    font-size: 1.7rem;
-                }
-
-                .image-block-container {
-                    position: relative;
-                    overflow: hidden;
-                    height: 33rem;
-                }
-
-                .image-block-container .inner-ladder {
-                    display: none;
-                }
-
-                .relative {
-                    margin-bottom: 3.4rem;
-                }
-
-                .relative div ul li {
-                    list-style: none;
-                    line-height: 2.5rem;
-                    font-family: Tahoma, Arial, sans-serif;
-                    font-size: 1.8rem;
-                    margin-left: -1rem;
-                }
-
-                .relative div ul li i {
-                    font-size: 1.8rem;
-                }
-
-                .relative img {
-                    opacity: 0.0;
-                }
-
-                .main-headers {
+            .main-headers {
                     width: fit-content;
                     padding-bottom: .3rem;
-                    padding-left: .3rem;
+                    padding-left: 2.4rem;
                     padding-right: .3rem;
-                    font-family: Tahoma, sans-serif;
-                    font-size: 2rem;
+                    font-size: 1.3rem;
                 }
-                .pre-footer {
-                    padding: 6rem 10rem 6rem 10rem;
-                }
-                .pre-footer h2 {
-                    font-size: 2rem;
-                }
-                .footer-description ul li {
-                    margin-left: -4rem;
-                    line-height: 3rem;
-                    font-size: 1.5rem;
-                }
-            }
-        }
-    </style>
 
+            #our-advantages {
+                top: 8rem !important; 
+                z-index: 9999;
+            }
+
+            
+
+            #logo {
+                top: 2rem;
+                width: 15rem;
+                left: 1rem;
+            }
+
+
+            #logo img {
+                width: 15rem;
+                margin-right: auto;
+                
+            }
+            .relative #wide {
+                display: block;
+            width: 100vw;
+            margin-left: -1rem;
+        }
+            .relative #long {
+            display: none;
+        }
+
+        
+        }
+        @media (max-width: 576px) {
+
+            .relative #wide {
+            display: none;
+        }
+            .relative #long {
+            display: block;
+            width: 100vw;
+            margin-left: -2rem;
+        }
+
+            .image-block-container {
+                position: relative;
+                overflow: hidden;
+                height: 32rem;
+                margin-top: 2rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .ladder a .image-block-container .inner-ladder {
+                display: none;
+            }
+
+            .relative div ul li {
+                list-style: none;
+                line-height: 1.7rem;
+                font-size: 1.2rem;
+                font-family: Scada, Tahoma, Arial, sans-serif;
+            }
+
+            .relative div ul li i {
+                font-size: 1.5rem;
+            }
+            #our-advantages {
+                top: 15rem !important; 
+                z-index: 9999;
+            }
+
+            .main-headers {
+                width: fit-content;
+                padding-bottom: .3rem;
+                padding-left: 5rem;
+                padding-right: .3rem;
+                font-size: 2.5rem;
+            }
+
+            #logo {
+                top: 2rem;
+                width: 25rem;
+                left: 22rem;
+            }
+
+
+            #logo img {
+                width: 25rem;
+                margin-right: auto;
+            }
+            .footer-description {
+                margin-left: -4rem;
+            }
+    }
+    </style>
 </head>
 
 <body>
-
-    <header>
-        <nav class="navbar bg-dark">
-            <div>
-                <img class='navbar-logo' src="https://i.ibb.co/dGXSh5r/LOGO-new-color.png"
-                    alt="Лестницы на больцах, производство и установка">
-            </div>
-            <div id='phone-div'>
-                <div class='ml-auto mb-auto'>
-                    <p class='h5 text-light' style='font-family: Tahoma, Arial, sans-serif;'>
-                        <strong>
-                            +375295959878 (MTC/Viber)
-                        </strong>
-                    </p>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <div class='container-fluid' style='overflow: hidden'>
         <div class='row'>
             <div class='col-12 relative'>
-                <img src="./lestnitsy-na-boltsakch/mainPage/face-image2.png" alt="bg-picture"
-                    style="width:100%; height:100%">
-                <div class='col-lg-6 col-md-6'>
-                    <h5 class="text-info bg-warning main-headers"><strong>ЛЕСТНИЦЫ ДЛЯ ВАШЕГО ДОМА</strong></h5>
 
-                    <h5 class="text-info bg-warning main-headers"><strong>ЦЕНА ОТ 1000
+                <div class='backgrodund-image-overlay'>
+
+                </div>
+
+                <img id='wide' src="./lestnitsy-na-boltsakch/main-background.jpg"
+                    alt="Красивые аппартаменты с винтовой лестницей на 2 этаж">
+
+                    <img id='long' src="./lestnitsy-na-boltsakch/pexels-rachel-claire-4577688.jpg"
+                    alt="Красивые аппартаменты с винтовой лестницей на 2 этаж">
+
+                <div id='logo'>
+                    <img src="https://i.ibb.co/dGXSh5r/LOGO-new-color.png"
+                        alt="Лестницы на больцах, производство и установка на заказ">
+                </div>
+
+                <!-- <div id='contact-phone-block'>
+                    <h1 class='text-warning'>
+                        <strong>
+                            +375295959878 (MTC/Viber)
+                        </strong>
+                    </h1>
+                </div> -->
+
+                <div id='our-advantages'>
+                    <h5 class="text-warning main-headers"><strong>ЛЕСТНИЦЫ ДЛЯ ВАШЕГО ДОМА</strong></h5>
+
+                    <h5 class="text-warning main-headers"><strong>ЦЕНА ОТ 1000
                             BYN</strong></h5>
-
                     <ul>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            Полный цикл производства
+                            <span class='text-light'>
+                                Полный цикл производства
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            Гарантия
+                            <span class='text-light'>
+                                Гарантия
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            Ступени повышенной износостойкости
+                            <span class='text-light'>
+                                Ступени повышенной износостойкости
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            Надежный скрытый крепеж столбов и ступеней
+                            <span class='text-light'>
+                                Надежный скрытый крепеж столбов и ступеней
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            Тонировка в любой цвет по вашему образцу
+                            <span class='text-light'>
+                                Тонировка в любой цвет по вашему образцу
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            Бесплатная консультация
+                            <span class='text-light'>
+                                Бесплатная консультация
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            15 лет опыта работы
+                            <span class='text-light'>
+                                15 лет опыта работы
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-check-square text-warning"></i>
-                            Заключаем официальный договор
+                            <span class='text-light'>
+                                Заключаем официальный договор
+                            </span>
                         </li>
                     </ul>
-
                 </div>
+                <!-- <div id='our-work' class='text-dark'>
+                    Наши работы
+                </div> -->
             </div>
         </div>
 
-        <div class='row'>
-            <div class='col-12 bg-warning inner-headers-container'>
-                <div>
-                    <h1 class='inner-headers text-info'>Наши работы</h1>
-                </div>
+        <div id='our-production' class='row mt-n1'>
+            <div class='col-12 bg-warning inner-headers-container' style='margin-top: 5px'>
+                <h2 class='inner-headers text-dark'>Наши работы</h2>
             </div>
         </div>
-
-        <div class='row'>
-
+        <div class='row  mx-n3 mt-n1 bg-light'>
             <div class='col-12 col-sm-6 col-md-4 ladder'>
                 <a href="./lestnitsa-na-boltsakch.html">
                     <div class='image-block-container'>
@@ -501,12 +581,13 @@
             </div>
         </div>
 
-        <div class='row'>
+
+        <div class='row mt-1'>
             <div class='col-12 bg-warning inner-headers-container' style='margin-top: 5px'>
-                <h2 class='inner-headers text-info'>Межэтажные лестницы под ключ</h2>
+                <h2 class='inner-headers text-dark'>Межэтажные лестницы под ключ</h2>
             </div>
         </div>
-        <div class='row'>
+        <div class='row mt-5'>
             <div class='col-1 col-md-2 col-lg-3'></div>
             <div class='col-10 col-md-8 col-lg-6 description'>
                 <p></p>
@@ -539,16 +620,16 @@
             </div>
             <div class='col-1 col-md-2 col-lg-3'></div>
         </div>
-        <div class='row'>
+        <div class='row mt-5'>
             <div class='col-12 bg-light inner-headers-container' style='margin-top: 5px'>
                 <h2 class='inner-headers text-dark'>Особенности конструкции</h2>
             </div>
         </div>
-        <div class='row'>
-            <div class='col-sm-1 col-lg-2'></div>
-            <div class='col-sm-10 col-lg-8' style='text-align: center'>
+        <div class='row mt-5'>
+            <div class='col-2'></div>
+            <div class='col-8' style='text-align: center'>
                 <hr>
-                <p style='font-size: max(.7rem, 15px); font-family: Tahoma;' class='text-muted'>
+                <p style='font-size: max(.7rem, 14px); font-family: Scada, Tahoma;' class='text-muted'>
                     В первые годы эксплуатации нового дома происходит усыхание деревянных балок и досок пола. Это
                     неизбежно.
                     В результате начинают шататься столбы ограждения второго этажа. Нам удалось решить эту проблему на
@@ -562,17 +643,19 @@
                 </p>
                 <hr>
             </div>
-            <div class='col-sm-1 col-lg-2'></div>
+            <div class='col-2'></div>
         </div>
-        <div class='row'>
-            <div class='col-12 pre-footer inner-headers-container bg-dark border-bottom border-warning' style='margin-top: 5px;'>
-                <h2 class='inner-headers text-light'>Мы найдём решение, которое устроит именно вас</h2>
+
+        <div class='row mt-5'>
+            <div class='col-12 inner-headers-container bg-dark border-bottom border-warning' style='margin-top: 5px;'>
+                <h2 class='inner-headers text-light' style='font-size: max(1rem, 13px)'>Мы найдём решение, которое устроит именно вас</h2>
             </div>
         </div>
 
+
         <footer>
 
-            <div class='row bg-dark'>
+            <div class='row bg-dark py-5'>
                 <div class='col-12 footer-description'>
                     <ul>
                         <li class='text-light'><i class="fas fa-mobile text-warning"></i> +375295959878(MTS/Viber)</li>
@@ -599,8 +682,7 @@
         $(document).ready(function () {
 
             $('.ladder').on('mouseover', (function (event) {
-                if (window.innerWidth < 576) return
-                else {
+                if (window.innerWidth > 992) {
                     $(this).find('.inner-ladder').stop().animate({
                         opacity: 0.0
                     }, 10)
@@ -613,19 +695,17 @@
                         'transform': 'scale(1.1)',
                     })
                 }
+
             }))
 
             $('.ladder').on('mouseout', (function () {
-                if (window.innerWidth < 576) return
-                else {
-                    $(this).find('.inner-ladder').stop().animate({
-                        opacity: 1.0
-                    }, 10)
-                    $(this).find('.banner-text').stop().slideUp(300);
-                    $(this).find('.ladder-image').css({
-                        'transform': 'scale(1.0)',
-                    })
-                }
+                $(this).find('.inner-ladder').stop().animate({
+                    opacity: 1.0
+                }, 10)
+                $(this).find('.banner-text').stop().slideUp(300);
+                $(this).find('.ladder-image').css({
+                    'transform': 'scale(1.0)',
+                })
             }))
 
         })
