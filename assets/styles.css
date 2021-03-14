@@ -219,9 +219,10 @@
     }
 
     .footer-description ul li {
-        font-size: max(.5rem, 9px);
+        font-size: max(.6rem, 9px);
         list-style: none;
         line-height: 1.2rem;
+        font-family: Roboto_Condenced;
     }
 
     .ladder-image {

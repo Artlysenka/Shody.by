@@ -18,14 +18,16 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-
-
     <title>Shody Starting Page</title>
     <style>
         
         @font-face {
             font-family: Scada;
-            src: url('./fonts/Scada/Scada-Regular.ttf')
+            src: url('./fonts/Scada/Scada-Regular.ttf');
+        }
+        @font-face {
+            font-family: test;
+            src: url('./fonts/PT_Sans/PTSans-Regular.ttf');
         }
         html {
             font-size: 2vw;
@@ -195,9 +197,12 @@
             padding-top: .4rem;
         }
 
+        
+
         .description p {
             font-size: max(.7rem, 14px);
-            font-family: Scada, Tahoma, sans-serif;
+            line-height: max(1.2rem, 24px);
+            font-family: test;
         }
 
         .footer-description {
@@ -206,7 +211,7 @@
 
         .footer-description ul li {
             font-size: max(.6rem, 11px);
-            font-family: Tahoma, Scada, Arial, sans-serif;
+            font-family: Scada, Arial, sans-serif;
             line-height: max(1.3rem, 20px);
             list-style: none;
         }
@@ -224,6 +229,9 @@
             #our-production div {
                 padding-top: .5rem;
                 padding-bottom: .5rem;
+            }
+            #coclusion {
+                font-family: Scada;
             }
 
         @media(max-width: 992px) {
@@ -362,6 +370,9 @@
                 padding-top: 1rem;
                 padding-bottom: 1rem;
             }
+            footer {
+                margin-top: -2rem;
+            }
         }
         @media (max-width: 400px) {
 
@@ -420,9 +431,7 @@
                 text-align: center;
                 font-family: Scada;
             } 
-            
             .inner-headers-container {
-                background-color: white !important;
                 margin-top: 10rem !important;
                 margin-bottom: 2rem;
             }
@@ -434,6 +443,7 @@
             #coclusion {
                 color:rgba(0, 0, 0, .8) !important;
                 font-size: 3rem !important;
+                font-family: Scada;
             }
            
         }
@@ -680,17 +690,18 @@
                     </div>
                 </a>
             </div>
+           
         </div>
 
-
+        <hr>
         <div class='row mt-1'>
-            <div class='col-12 bg-warning inner-headers-container' style='margin-top: 5px'>
-                <h2 class='inner-headers text-dark'>Межэтажные лестницы под ключ</h2>
+            <div class='col-12 bg-dark inner-headers-container' style='margin-top: 5px'>
+                <h2 class='inner-headers text-warning'>Межэтажные лестницы под ключ</h2>
             </div>
         </div>
         <div class='row mt-5'>
             <div class='col-1 col-md-2 col-lg-3'></div>
-            <div class='col-10 col-md-8 col-lg-6 description'>
+            <div class='col-10 col-md-8 col-lg-6 description text-left'>
                 <p></p>
                 <p>
                     Мы занимается проектированием, изготовлением, отделкой и монтажом деревянных межэтажных лестниц. С
@@ -717,20 +728,22 @@
                     ясень),
                     так мы и поступаем. На цену это сильно не влияет, а качество
                     поднимает на новый уровень. В результате повышается износостойкость ступени.</p>
-
+                    <hr>
             </div>
             <div class='col-1 col-md-2 col-lg-3'></div>
         </div>
-        <div class='row mt-5'>
-            <div class='col-12 bg-light inner-headers-container' style='margin-top: 5px'>
+        <div class='row my-5'>
+            <div class='col-1 col-lg-2'></div>
+            <div class='col-10 col-lg-8 bg-warning text-center' style='margin-top: 5px'>
                 <h2 class='inner-headers text-dark'>Особенности конструкции</h2>
             </div>
-        </div>
-        <div class='row mt-5'>
             <div class='col-1 col-lg-2'></div>
-            <div class='col-10 col-lg-8' style='text-align: center'>
-                <hr>
-                <p style='font-size: max(.7rem, 14px); font-family: Scada, Tahoma;' class='text-muted'>
+            
+        </div>
+        <div class='row  mt-3'>
+            <div class='col-1 col-lg-2'></div>
+            <div class='col-10 col-lg-8 text-right'>
+                <p style='font-size: max(.7rem, 14px); font-family: Tahoma; line-height: max(1.3rem, 24px);' class='text-muted'>
                     В первые годы эксплуатации нового дома происходит усыхание деревянных балок и досок пола. Это
                     неизбежно.
                     В результате начинают шататься столбы ограждения второго этажа. Нам удалось решить эту проблему на
@@ -742,27 +755,27 @@
                     Столбы стоят жестко, как из металла. Также при необходимости есть возможность снимать детали для
                     ремонта.
                 </p>
-                <hr>
+               
             </div>
             <div class='col-1 col-lg-2'></div>
         </div>
 
         <div class='row mt-5'>
-            <div class='col-12 inner-headers-container bg-dark border-bottom border-warning' style='margin-top: 5px;'>
-                <h2 id='coclusion' class='inner-headers text-light' style='font-size: max(1rem, 13px)'>Мы найдём решение, которое устроит именно вас</h2>
+            <div class='col-12 inner-headers-container bg-light border-bottom border-warning' style='margin-top: 5px;'>
+                <h2 id='coclusion' class='inner-headers text-dark' style='font-size: max(1rem, 13px)'>Мы найдём решение, которое устроит именно вас</h2>
             </div>
         </div>
 
 
         <footer>
 
-            <div class='row bg-dark py-5'>
+            <div class='row bg-light py-5'>
                 <div class='col-12 footer-description'>
                     <ul>
-                        <li class='text-light'><i class="fas fa-mobile text-warning"></i> +375295959878(MTS/Viber)</li>
-                        <li class='text-light'><i class="fas fa-phone text-warning"></i> +375215332384</li>
-                        <li class='text-light'><i class="fas fa-envelope text-warning"></i> vasily1204@tut.by</li>
-                        <li class='text-light'><i class="fas fa-briefcase text-warning"></i> ИП Лысенко Василий
+                        <li class='text-dark'><i class="fas fa-mobile text-warning"></i> +375295959878(MTS/Viber)</li>
+                        <li class='text-dark'><i class="fas fa-phone text-warning"></i> +375215332384</li>
+                        <li class='text-dark'><i class="fas fa-envelope text-warning"></i> vasily1204@tut.by</li>
+                        <li class='text-dark'><i class="fas fa-briefcase text-warning"></i> ИП Лысенко Василий
                             Александрович УНП:390454178.</li>
                     </ul>
                 </div>
