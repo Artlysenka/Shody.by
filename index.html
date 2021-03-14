@@ -22,13 +22,18 @@
 
     <title>Shody Starting Page</title>
     <style>
+        
         @font-face {
             font-family: Scada;
             src: url('./fonts/Scada/Scada-Regular.ttf')
         }
-
         html {
             font-size: 2vw;
+        }
+
+        body {
+            background: url('./lestnitsy-na-boltsakch/main-background.jpg') no-repeat;
+            background-size: contain;
         }
 
         #logo {
@@ -38,20 +43,20 @@
         }
 
         #logo img {
-            width: max(12rem, 250px);
+            width: max(14rem, 250px);
         }
 
-        /* #contact-phone-block {
+        #contact-phone-block {
             position: absolute;
             top: .7rem;
             right: 1rem;
         }
 
         #contact-phone-block h1 {
-            font-size: 1.2rem;
-            font-family: Tahoma, Arial, sans-serif;
-        } */
-
+            font-size: 1rem;
+            font-family: Scada, Tahoma, Arial, sans-serif;
+            color: rgba(255, 255, 255, 0.5)
+        }
 
         .main-headers {
            
@@ -68,8 +73,14 @@
             position: absolute;
             top: 0px;
             width: 100vw;
-            height: 100%;
+            height: 32rem;
             background-color: rgba(0, 0, 0, 0.5);
+            margin-left: -1rem;
+        }
+
+        .relative #wide {
+            width: 100vw;
+            height: 32rem;
             margin-left: -1rem;
         }
 
@@ -86,18 +97,14 @@
             background-color: rgba(255, 255, 255, 0.5);
         }
 
-        .relative #wide {
-            width: 100vw;
-            margin-left: -1rem;
-        }
         .relative #long {
             display: none;
         }
 
         .relative #our-advantages {
             position: absolute;
-            top: max(5rem, 150px);
-            right: 2rem;
+            top: max(9rem, 150px);
+            right: 0rem;
             display: inline-block;
             padding: 1rem;
             border-radius: 5px;
@@ -138,7 +145,7 @@
             top: 0px;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, .6);
+            background-color: rgba(0, 0, 0, .5);
             opacity: 1.0;
             transition: opacity 200ms ease-in-out;
             z-index: 1;
@@ -184,7 +191,7 @@
 
         .inner-headers {
             font-size: max(1.6rem, 18px);
-            font-family: Scada, Tahoma Arial, sans-serif;
+            font-family: Tahoma Arial, sans-serif;
             padding-top: .4rem;
         }
 
@@ -214,75 +221,57 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media(max-width: 768px) {
 
-            .relative div {
-                position: absolute;
-                left: 1rem;
+            .relative #our-advantages {
+                top: 7rem;
             }
 
-            .ladder a .image-block-container .inner-ladder {
-                    display: none;
-                }
-
-            .relative div ul li i {
-                font-size: .1rem;
+            .relative .backgrodund-image-overlay {
+            height: 33rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-left: -1.2rem;
             }
 
-            .image-block-container {
-                position: relative;
-                overflow: hidden;
-                height: 18rem;
-            }
-
-            .main-headers {
-                    width: fit-content;
-                    padding-bottom: .3rem;
-                    padding-left: 2.4rem;
-                    padding-right: .3rem;
-                    font-size: 1.3rem;
-                }
-
-            #our-advantages {
-                top: 8rem !important; 
-                z-index: 9999;
-            }
-
-            
-
-            #logo {
-                top: 2rem;
-                width: 15rem;
-                left: 1rem;
-            }
-
-
-            #logo img {
-                width: 15rem;
-                margin-right: auto;
-                
-            }
             .relative #wide {
-                display: block;
             width: 100vw;
+            height: 32rem;
             margin-left: -1rem;
-        }
-            .relative #long {
-            display: none;
+            }
+            #our-production {
+                padding-top: 1rem;
+            }
         }
 
-        
-        }
+      
         @media (max-width: 576px) {
 
+            body {
+            background: url('./lestnitsy-na-boltsakch/small2.jpg') no-repeat;
+            background-size: contain;
+            }
+
+            #contact-phone-block {
+            top: 17rem;
+            right: 1rem;
+            }
+
+            #contact-phone-block h1 {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.5)
+            }
+
+            .relative .backgrodund-image-overlay {
+            height: 62rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-left: -1.5rem;
+            }
+
             .relative #wide {
-            display: none;
-        }
-            .relative #long {
-            display: block;
             width: 100vw;
-            margin-left: -2rem;
-        }
+            height: 62rem;
+            margin-left: -1rem;
+            }
 
             .image-block-container {
                 position: relative;
@@ -305,13 +294,16 @@
             }
 
             .relative div ul li i {
-                font-size: 1.5rem;
+                font-size: 2rem !important;
             }
-            #our-advantages {
-                top: 15rem !important; 
-                z-index: 9999;
+            .relative #our-advantages {
+            position: absolute;
+            top: 24rem !important;
+            right: 0rem;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, .4);
             }
-
             .main-headers {
                 width: fit-content;
                 padding-bottom: .3rem;
@@ -319,22 +311,44 @@
                 padding-right: .3rem;
                 font-size: 2.5rem;
             }
-
             #logo {
                 top: 2rem;
                 width: 25rem;
-                left: 22rem;
+                left: 11rem;
             }
-
-
             #logo img {
-                width: 25rem;
+                width: 35rem;
                 margin-right: auto;
             }
             .footer-description {
+                padding-bottom: 12rem;
                 margin-left: -4rem;
+            } 
+
+            #our-production {
+                padding-top: 11rem;
+            }  
+        }
+        @media (max-width: 400px) {
+
+            .relative #our-advantages {
+            position: absolute;
+            top: max(9rem, 150px);
+            right: 0rem;
+            display: inline-block;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, .4);
+        }
+            .relative .backgrodund-image-overlay {
+            height: 75rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-left: -2rem;
             }
-    }
+            #our-production {
+                padding-top: 15rem;
+            }
+        }
     </style>
 </head>
 
@@ -342,29 +356,27 @@
     <div class='container-fluid' style='overflow: hidden'>
         <div class='row'>
             <div class='col-12 relative'>
+                <div id='wide'></div>
+                <div class='backgrodund-image-overlay'></div>
 
-                <div class='backgrodund-image-overlay'>
+                
 
-                </div>
-
-                <img id='wide' src="./lestnitsy-na-boltsakch/main-background.jpg"
-                    alt="Красивые аппартаменты с винтовой лестницей на 2 этаж">
-
-                    <img id='long' src="./lestnitsy-na-boltsakch/pexels-rachel-claire-4577688.jpg"
-                    alt="Красивые аппартаменты с винтовой лестницей на 2 этаж">
+                   <!--  <img id='long' src="./lestnitsy-na-boltsakch/3000.jpg"
+                    alt="Красивые аппартаменты с винтовой лестницей на 2 этаж"> -->
 
                 <div id='logo'>
                     <img src="https://i.ibb.co/dGXSh5r/LOGO-new-color.png"
                         alt="Лестницы на больцах, производство и установка на заказ">
                 </div>
 
-                <!-- <div id='contact-phone-block'>
-                    <h1 class='text-warning'>
+                <div id='contact-phone-block'>
+                    <h1>
                         <strong>
+                            Контактный телефон: <br>
                             +375295959878 (MTC/Viber)
                         </strong>
                     </h1>
-                </div> -->
+                </div>
 
                 <div id='our-advantages'>
                     <h5 class="text-warning main-headers"><strong>ЛЕСТНИЦЫ ДЛЯ ВАШЕГО ДОМА</strong></h5>
@@ -626,8 +638,8 @@
             </div>
         </div>
         <div class='row mt-5'>
-            <div class='col-2'></div>
-            <div class='col-8' style='text-align: center'>
+            <div class='col-1 col-lg-2'></div>
+            <div class='col-10 col-lg-8' style='text-align: center'>
                 <hr>
                 <p style='font-size: max(.7rem, 14px); font-family: Scada, Tahoma;' class='text-muted'>
                     В первые годы эксплуатации нового дома происходит усыхание деревянных балок и досок пола. Это
@@ -643,7 +655,7 @@
                 </p>
                 <hr>
             </div>
-            <div class='col-2'></div>
+            <div class='col-1 col-lg-2'></div>
         </div>
 
         <div class='row mt-5'>
