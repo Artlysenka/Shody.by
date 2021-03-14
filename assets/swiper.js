@@ -80,9 +80,15 @@
                 }
             }
             else {
-                if (fingerRelativePosition < 150) {
-                    if (finaleTime - initialTime > 200) {
-                        picture.style.marginLeft = position + 'rem'
+                if (parseInt(position) > parseInt((totalSlidesCount - 1) * -width)) {
+                    if (fingerRelativePosition < 150) {
+                        if (finaleTime - initialTime > 200) {
+                            picture.style.marginLeft = position + 'rem'
+                        }
+                        else {
+                            picture.style.marginLeft = position - width + 'rem'
+                            position -= width
+                        }
                     }
                     else {
                         picture.style.marginLeft = position - width + 'rem'
@@ -90,8 +96,7 @@
                     }
                 }
                 else {
-                    picture.style.marginLeft = position - width + 'rem'
-                    position -= width
+                    picture.style.marginLeft = position + 'rem'  
                 }
             }
         }, false);
