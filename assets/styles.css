@@ -7,7 +7,7 @@
         font-size: 2vw;
     }
     body {
-        background: url('../lestnitsy-na-boltsakch/pexels-rachel-claire-4577688.jpg');
+        background: url('../lestnitsy-na-boltsakch/pexels-rachel-claire-4577688.jpg') no-repeat;
         position: relative;
         overflow-x: hidden;
     }
@@ -16,7 +16,7 @@
         top: 0;
         width: 100vw;
         height: 100%;
-        background-color: rgba(0, 0, 0, .6);
+        background-color: rgba(0, 0, 0, .4);
     }
 
     .transition {
@@ -29,10 +29,11 @@
 
     .navbar-logo {
         width: max(14rem, 220px);
+        margin-bottom: 2rem;
     }
 
     .navbar p {
-        font-family: Tahoma, Arial, sans-serif;
+        font-family: Roboto_Condenced, Tahoma, Arial, sans-serif;
         font-size: max(.7rem, 12px);
     }
 
@@ -154,27 +155,29 @@
         text-align: center;
         padding-top: .7rem;
         padding-bottom: .4rem;
-        height: 6rem;
+        height: 5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba(0, 0, 0, .6)
+        background-color: rgba(0, 0, 0, .4)
     }
 
     .ladder-name .right {
         position: absolute; 
+        top: 2rem;
         right: 1rem;
         cursor: pointer;
         color:rgba(255, 255, 255, .2)
     }
     .ladder-name .left {
         position: absolute; 
+        top: 2rem;
         left: 1rem;
         cursor: pointer;
         color:rgba(255, 255, 255, .2)
     }
     .ladder-name i:hover {
-        color:rgb(247, 189, 1)
+        color: rgba(247, 189, 1, .7)
     }
 
     .ladder-name h1 {
@@ -278,6 +281,14 @@
         .ladder-name {
             height: 15rem;
             background-color: rgba(0, 0, 0, .2);
+        }
+
+        .ladder-name .left {
+            top: 6rem;
+        }
+
+        .ladder-name .right {
+            top: 6rem;
         }
 
         .footer-description ul li {

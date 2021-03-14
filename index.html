@@ -215,9 +215,29 @@
             font-size: 1.5rem;
         }
 
+        #our-production {
+                padding-top: 2rem;
+                text-align: center;
+                font-family: Scada;
+            } 
+            
+            #our-production div {
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+            }
+
         @media(max-width: 992px) {
             .ladder a .image-block-container .inner-ladder {
                 display: none;
+            }
+            #our-production {
+                padding-top: 3rem;
+                text-align: center;
+                font-family: Scada;
+            }  
+            #our-production div {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
             }
         }
 
@@ -239,7 +259,14 @@
             margin-left: -1rem;
             }
             #our-production {
+                padding-top: 3rem;
+                text-align: center;
+                font-family: Scada;
+                
+            }  
+            #our-production div {
                 padding-top: 1rem;
+                padding-bottom: 1rem;
             }
         }
 
@@ -314,7 +341,7 @@
             #logo {
                 top: 2rem;
                 width: 25rem;
-                left: 11rem;
+                left: 1rem;
             }
             #logo img {
                 width: 35rem;
@@ -327,7 +354,14 @@
 
             #our-production {
                 padding-top: 11rem;
+                text-align: center;
+                font-family: Scada;
+                
             }  
+            #our-production div {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
         }
         @media (max-width: 400px) {
 
@@ -351,17 +385,25 @@
         }
         @media (max-width: 370px) {
             #contact-phone-block {
-            top: 13rem;
+            top: 16rem;
             right: 1rem;
-        }
+            }
             .relative #our-advantages {
             position: absolute;
-            top: 19rem !important;
+            top: 23.4rem !important;
             right: 0rem;
             display: inline-block;
             padding: 1rem;
-            border-radius: 5px;
+            border-radius: 0px;
             background-color: rgba(0, 0, 0, .4);
+            }
+
+            .relative #our-advantages ul li {
+                line-height: 3.5rem;
+            }
+
+            .relative #our-advantages span {
+                font-size: 2.2rem;
             }
 
             .relative #wide {
@@ -375,8 +417,25 @@
             margin-left: -2rem;
             }
             #our-production {
-                padding-top: 16rem;
+                text-align: center;
+                font-family: Scada;
+            } 
+            
+            .inner-headers-container {
+                background-color: white !important;
+                margin-top: 10rem !important;
+                margin-bottom: 2rem;
             }
+            .inner-headers {
+                font-size: 4rem;
+                font-family: Scada;
+            } 
+
+            #coclusion {
+                color:rgba(0, 0, 0, .8) !important;
+                font-size: 3rem !important;
+            }
+           
         }
     </style>
 </head>
@@ -401,7 +460,10 @@
                 <div id='contact-phone-block'>
                     <h1>
                         <strong>
-                            Контактный телефон: <br>
+                            <span class='text-light'>
+                                Контактный телефон:
+                            </span>
+                             <br>
                             +375295959878 (MTC/Viber)
                         </strong>
                     </h1>
@@ -469,8 +531,8 @@
             </div>
         </div>
 
-        <div id='our-production' class='row mt-n1'>
-            <div class='col-12 bg-warning inner-headers-container' style='margin-top: 5px'>
+        <div id='our-production' class='row mt-n5'>
+            <div class='col-12 bg-warning' style='margin-top: 5px'>
                 <h2 class='inner-headers text-dark'>Наши работы</h2>
             </div>
         </div>
@@ -689,7 +751,7 @@
 
         <div class='row mt-5'>
             <div class='col-12 inner-headers-container bg-dark border-bottom border-warning' style='margin-top: 5px;'>
-                <h2 class='inner-headers text-light' style='font-size: max(1rem, 13px)'>Мы найдём решение, которое устроит именно вас</h2>
+                <h2 id='coclusion' class='inner-headers text-light' style='font-size: max(1rem, 13px)'>Мы найдём решение, которое устроит именно вас</h2>
             </div>
         </div>
 
