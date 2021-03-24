@@ -108,7 +108,7 @@
         let mouseRelativePosition = 0
 
 
-        picture.addEventListener('mousedown', function (event) {
+       /*  picture.addEventListener('mousedown', function (event) {
             event.preventDefault();
             event.stopPropagation();
             let clickTime = new Date
@@ -116,9 +116,9 @@
             picture.classList.remove('transition')
             mouseClickedOnTheElenent = true
             initialPosition.x = event.pageX
-        }, false);
+        }, false); */
 
-        picture.addEventListener('mousemove', function (event) {
+        /* picture.addEventListener('mousemove', function (event) {
 
             event.preventDefault();
             event.stopPropagation();
@@ -147,9 +147,9 @@
                 }
             }
 
-        }, false);
+        }, false); */
 
-        modalContainer.addEventListener('mouseup', function (event) {
+        /* modalContainer.addEventListener('mouseup', function (event) {
 
             event.preventDefault();
             event.stopPropagation();
@@ -195,12 +195,11 @@
                 }
                 else {
                     picture.style.marginLeft = position + 'rem'
-                    /* console.log('position after swipe: ', (totalSlidesCount - 1) * -width)
-                    console.log('static position: ', position) */
+                  
                 }
             }
             mouseClickedOnTheElenent = false
-        }, false);
+        }, false); */
 
         $('.modal-button').on({
             'click': function (event) {
