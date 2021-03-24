@@ -233,7 +233,6 @@
                     overflow: 'scroll',
                 })
                 totalSlidesCount = 0
-
             },
         })
 

@@ -7,8 +7,7 @@
         font-size: 2vw;
     }
     body {
-        background: url('../lestnitsy-na-boltsakch/1111.jpg') no-repeat;
-        background-size:cover;
+        /* background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,1)) no-repeat; */
         position: relative;
         overflow-x: hidden;
     }
@@ -17,16 +16,31 @@
         top: 0;
         width: 100vw;
         height: 100%;
-        background-color: rgba(0, 0, 0, .4);
+        background-color: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,1)) no-repeat;
     }
 
     .transition {
         transition: margin 300ms;
     } 
-
-    nav {
+    header {
+        position: relative;
+        background: url('../lestnitsy-na-boltsakch/lestnitsa-vintovaya-1_4x.jpg');
+        background-size: cover;
         height: 10rem;
     }
+
+    .nav-background-overlay {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background-color: rgba(0,0,0,.8);
+        }
+
+    /* nav {
+        height: 10rem;
+    } */
 
     .navbar-logo {
         width: max(14rem, 220px);
@@ -35,7 +49,7 @@
 
     .navbar p {
         font-family: Roboto_Condenced, Tahoma, Arial, sans-serif;
-        font-size: max(.7rem, 12px);
+        font-size: max(.9rem, 12px);
     }
 
     .modal-container {
@@ -156,43 +170,40 @@
         text-align: center;
         padding-top: .7rem;
         padding-bottom: .4rem;
-        height: 5rem;
+        height: 3.5rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, .4)
+        justify-content: space-around;
+        /* background-color: rgba(255, 255, 255, 0.9) */
+    }
+
+    .ladder-name i {
+        position: absolute; 
+        top: 1.2rem;
+        color:rgba(255, 255, 255, .2)
     }
 
     .ladder-name .right {
-        position: absolute; 
-        top: 2rem;
-        right: 1rem;
         cursor: pointer;
-        color:rgba(255, 255, 255, .2)
     }
     .ladder-name .left {
-        position: absolute; 
-        top: 2rem;
-        left: 1rem;
         cursor: pointer;
-        color:rgba(255, 255, 255, .2)
     }
     .ladder-name i:hover {
-        color: rgba(247, 189, 1, .7)
+        color: rgba(255, 255, 255, 1)
     }
 
     .ladder-name h1 {
         font-family: Roboto_Condenced;
-        font-size: max(1.1rem, 20px)
+        font-size: max(1.2rem, 20px)
     }
 
     .ladder-description {
-        
         margin-bottom: 4rem;
     }
 
     .ladder-description p {
-        font-size: max(.6rem, 15px)
+        font-size: max(.65rem, 15px)
     }
 
     p {
@@ -205,17 +216,17 @@
         background-color: rgba(255, 255, 255, .7)
     }
 
-    .catching-frase {
+   /*  .catching-frase {
         background-color: rgba(0, 0, 0, .7)
     }
 
     footer {
         background-color: rgba(0, 0, 0, .7)
-    }
+    } */
 
     .footer-description {
         margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 4rem;
     }
 
     .footer-description ul li {
@@ -268,21 +279,37 @@
 
     @media (max-width: 576px) {
         body {
-            background: url('../lestnitsy-na-boltsakch/small2.jpg');
+            /* background: url('../lestnitsy-na-boltsakch/small2.jpg'); */
             position: relative;
             overflow-x: hidden;
         }
-        #background-overlay {
-            background-color: rgba(0, 0, 0, .6);
-        }
 
-        nav {
+        header {
             height: 25rem;
         }
 
+        nav {
+            height: 30rem;
+        }
+
+        .contact-phone {
+            margin-bottom: 5rem;
+        }
+
         .ladder-name {
-            height: 15rem;
-            background-color: rgba(0, 0, 0, .2);
+            height: 10rem;
+            
+        }
+
+        .ladder-name h1 {
+            font-size: 2.5rem;  
+        }
+        
+        .ladder-name i {
+            position: absolute; 
+            top: 3.5rem;
+            font-size: 2.5rem;
+            color:rgba(255, 255, 255, .2)
         }
 
         .ladder-name .left {
